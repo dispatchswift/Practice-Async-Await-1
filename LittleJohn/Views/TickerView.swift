@@ -54,15 +54,15 @@ struct TickerView: View {
 					HStack {
 						Text(symbol.name)
 						Spacer()
-							.frame(maxWidth: .infinity)
 						Text(String(format: "%.3f", [symbol.value]))
 					}
 				}
 			} header: {
-				Label(" Live", systemImage: "clock.arrow.2.circlepath")
-					.foregroundColor(Color(uiColor: .systemBlue))
-					.font(.custom("FantasqueSansMono-Regular", size: 42))
-					.padding(.bottom, 20)
+				Header(
+					tile: "Live",
+					imageName: "clock.arrow.2.circlepath",
+					foregroundUIColor: .systemBlue
+				)
 			}
 		}
 		.alert("Error", isPresented: $isDisplayingError) {
@@ -71,7 +71,7 @@ struct TickerView: View {
 			Text(lastErrorMessage)
 		}
 		.listStyle(.plain)
-		.font(.custom("FantasqueSansMono-Regular", size: 18))
+		.font(.custom(LJTheme.font, size: 18))
 		.padding(.horizontal)
 		.task {
 			do {

@@ -34,16 +34,17 @@ import SwiftUI
 
 /// Displays a list of stock symbols.
 struct SymbolListView: View {
+	
   let model: LJViewModel
 	
   /// The list of stocks available on the server.
   @State var symbols: [String] = []
-	
   @State var selectedStocks: Set<String> = []
 	
-  /// Description of the latest error to display to the user.
   @State var lastErrorMessage = "" {
-    didSet { isDisplayingError = true }
+    didSet {
+			isDisplayingError = true
+		}
   }
 	
   @State var isDisplayingError = false
@@ -52,26 +53,28 @@ struct SymbolListView: View {
   var body: some View {
     NavigationView {
       VStack {
-        // Programatically push the live ticker view.
-        NavigationLink(destination: TickerView(selectedSymbols: Array($selectedStocks.wrappedValue).sorted()).environmentObject(model),
-                       isActive: $isDisplayingLiveTicker) {
+        NavigationLink(
+					destination: TickerView(selectedSymbols: Array($selectedStocks.wrappedValue).sorted()).environmentObject(model),
+					isActive: $isDisplayingLiveTicker
+				) {
           EmptyView()
         }
 				.hidden()
 				
-        // The list of stock symbols.
         List {
-          Section(content: {
+          Section {
             if symbols.isEmpty {
               ProgressView().padding()
             }
             ForEach(symbols, id: \.self) { symbolName in
               SymbolRow(symbolName: symbolName, selected: $selectedStocks)
             }
-            .font(.custom("FantasqueSansMono-Regular", size: 18))
-          }, header: Header.init)
+						.font(.custom(LJTheme.font, size: 18))
+					} header: {
+						Header(tile: "Symbols", imageName: "chart.bar.xaxis", foregroundUIColor: .systemGreen)
+					}
         }
-        .listStyle(PlainListStyle())
+				.listStyle(.plain)
         .statusBar(hidden: true)
         .toolbar {
           Button("Live") {

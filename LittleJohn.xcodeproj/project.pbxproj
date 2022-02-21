@@ -19,6 +19,7 @@
 		9CC9E05426C50CCF00E2B42E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 9CC9E05326C50CCF00E2B42E /* LICENSE */; };
 		C8FA9EA727C1FA2000552678 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FA9EA627C1FA2000552678 /* String+.swift */; };
 		C8FA9EA927C1FA5E00552678 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FA9EA827C1FA5E00552678 /* Stock.swift */; };
+		C8FA9EAD27C35BA000552678 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FA9EAC27C35BA000552678 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		9CC9E05326C50CCF00E2B42E /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C8FA9EA627C1FA2000552678 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		C8FA9EA827C1FA5E00552678 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
+		C8FA9EAC27C35BA000552678 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		9C1AFC5626C284430009636E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C8FA9EAC27C35BA000552678 /* Constants.swift */,
 				9C1AFC5726C284910009636E /* StartUp.storyboard */,
 				9CA9D30A26B6DFBF00F9C822 /* Assets.xcassets */,
 				9C1AFC5226C276510009636E /* Fonts */,
@@ -215,6 +218,7 @@
 				9C3CAB4027117B8F0017A49D /* SymbolRow.swift in Sources */,
 				9C59D76726B6F45200AB05B4 /* TickerView.swift in Sources */,
 				C8FA9EA927C1FA5E00552678 /* Stock.swift in Sources */,
+				C8FA9EAD27C35BA000552678 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
