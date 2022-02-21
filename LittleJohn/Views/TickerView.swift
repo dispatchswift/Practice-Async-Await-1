@@ -35,12 +35,16 @@ import SwiftUI
 /// Displays a list of stocks and shows live price updates.
 struct TickerView: View {
   let selectedSymbols: [String]
-  @EnvironmentObject var model: LJViewModel
+	
+	@EnvironmentObject var model: LJViewModel
   @Environment(\.presentationMode) var presentationMode
-  /// Description of the latest error to display to the user.
+
   @State var lastErrorMessage = "" {
-    didSet { isDisplayingError = true }
+    didSet {
+			isDisplayingError = true
+		}
   }
+	
   @State var isDisplayingError = false
 
   var body: some View {
